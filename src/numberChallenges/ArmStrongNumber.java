@@ -19,7 +19,7 @@ public class ArmStrongNumber {
     }
     public static void main(String[] args) {
         ArmStrongNumber obj = new ArmStrongNumber();
-        int num = 153;
+        int num = 370;
         if(num == obj.armStrongNum(num)) System.out.println("it's an armstrong num");
         else System.out.println("it's not an armstrong number");
     }
