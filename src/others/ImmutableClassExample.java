@@ -4,12 +4,12 @@ package others;
 import java.util.ArrayList;
 import java.util.List;
 
-final class Student{
+final class Student1{
     private final int id;
     private final String name;
     private final List<String> courses;
 
-    Student(int id, String name,List<String> courses){
+    Student1(int id, String name,List<String> courses){
         this.id = id;
         this.name = name;
         this.courses = new ArrayList<String>(courses);
@@ -40,8 +40,8 @@ final class Student{
 public class ImmutableClassExample {
 
     public static void main(String[] args) {
-        Student s1 = new Student(1, "aadi", List.of("java", "python"));
-        
+        Student1 s1 = new Student1(1, "aadi", List.of("java", "python"));
+
         System.out.println(s1);
     }
 }
