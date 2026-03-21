@@ -22,6 +22,22 @@ public class JavaStreams {
 
         // 2. sum of the all elements in a list
         System.out.println(list.stream().mapToInt(Integer::intValue).sum());
+        System.out.println(list.stream().reduce(0, (a, b) -> a+b));
+        //T result = stream.reduce(identity, accumulator, combiner);
+        /*reduce() is used to combine all elements of a stream into a single result
+        reduce() = "Take many → combine step-by-step → get one result"
+        Sum
+        int sum = list.stream().reduce(0, Integer::sum);
+        Max
+        int max = list.stream().reduce(Integer.MIN_VALUE, Integer::max);
+        String Join
+        String result = Stream.of("A", "B", "C")
+                .reduce("", (a, b) -> a + b);
+         When NOT to Use reduce()
+
+        Sometimes reduce() is overkill:
+        Use .sum() instead of reduce for numbers
+        Use .collect() for complex objects (like lists, maps)*/
         /*// map -> Stream<Integer>
         Stream<Integer> s1 = list.stream().map(Integer::intValue);
 
@@ -71,7 +87,33 @@ public class JavaStreams {
 
                 sorted() → returns a new sorted view via streams.*/
 
-        
+        // 6. want employee first names only
+        List<Employee> employeeList = new ArrayList<>();
+        employeeList.add(new Employee(1, "abhisek", "sharma"));
+        employeeList.add(new Employee(1, "rohit", "sharma"));
 
+        System.out.println(employeeList.stream().map(Employee::getFirstName).toList());
+    }
+}
+class Employee{
+    int id;
+    String firstName;
+    String lastName;
+
+    public Employee(int id, String firstName, String lastName) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    public int getId() {
+        return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 }
