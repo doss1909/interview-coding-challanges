@@ -93,6 +93,8 @@ public class JavaStreams {
         employeeList.add(new Employee(1, "rohit", "sharma"));
 
         System.out.println(employeeList.stream().map(Employee::getFirstName).toList());
+
+
     }
 }
 class Employee{
