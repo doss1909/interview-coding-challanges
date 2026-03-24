@@ -28,6 +28,6 @@ public class Level4StreamCoding {
         // 13. Convert to Map (id → user)
         Map<Integer, User> collect = userList.stream().collect(Collectors.toMap(u -> u.id, u -> u));
         // 14. Get users sorted by city then age
-        userList.stream().sorted(Comparator.comparing(u))
+        userList.stream().sorted(Comparator.comparing((User u) -> u.address.city).thenComparing(u -> u.age)).toList();
     }
 }
