@@ -65,6 +65,6 @@ public class Level2StreamAPICoding {
                 .filter(p -> !p.isEmpty())
                 .ifPresent(System.out::print);
 
-        
+
     }
 }
